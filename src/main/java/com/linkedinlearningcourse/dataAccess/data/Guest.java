@@ -13,7 +13,7 @@ public class Guest {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "GUEST_ID")
-    private long id;
+    private long guestId;
 
     @Column(name = "FIRST_NAME")
     private String firstName;
@@ -39,7 +39,7 @@ public class Guest {
     @Override
     public String toString() {
         return "Guest{" +
-                "id=" + id +
+                "id=" + guestId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +

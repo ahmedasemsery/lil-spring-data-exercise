@@ -2,21 +2,17 @@ package com.linkedinlearningcourse.dataAccess.util;
 
 
 import com.linkedinlearningcourse.dataAccess.data.*;
+import lombok.AllArgsConstructor;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 @Component
+@AllArgsConstructor
 public class appStartupEvent implements ApplicationListener<ApplicationReadyEvent> {
     private final RoomRepository roomRepository;
     private final GuestRepository guestRepository;
     private final ReservationRepository reservationRepository;
-
-    public appStartupEvent(RoomRepository roomRepository, GuestRepository guestRepository, ReservationRepository reservationRepository) {
-        this.roomRepository = roomRepository;
-        this.guestRepository = guestRepository;
-        this.reservationRepository = reservationRepository;
-    }
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
