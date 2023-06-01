@@ -49,5 +49,18 @@ public class ReservationService {
         });
         return roomReservations;
     }
+
+    public void addGuest(Guest guest) {
+
+    }
+
+    public List<Room> getRooms() {
+        List<Room> roomList = new ArrayList<>();
+        Iterable<Room> rooms = this.roomRepository.findAll();
+
+        rooms.forEach(roomList::add);
+
+        return roomList;
+    }
 }
 
